@@ -53,7 +53,12 @@ def Set(key, value):
 def Get(key, value):
     OpenConnection()
     string = conf.token+" Get "+key+" "+value
+    sock.send(string)
 
+def Select(key):
+    OpenConnection()
+    string = conf.token+" Select "+key
+    sock.send(string)
 
 
 
