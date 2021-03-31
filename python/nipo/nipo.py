@@ -60,6 +60,10 @@ def Select(key):
     string = conf.token+" Select "+key
     sock.send(string)
 
+def Avg(key):
+    OpenConnection()
+    string = conf.token+" avg "+key
+    sock.send(string)
 
 
 
