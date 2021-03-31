@@ -1,4 +1,4 @@
-GO library for nipo
+GO library for nipo .
 
 # sample
 
