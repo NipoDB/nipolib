@@ -1,6 +1,6 @@
 import socket
 
-class nipoSocket:
+class NipoSocket:
     def __init__(self, sock=None):
         if sock is None:
             self.sock = socket.socket(
@@ -35,7 +35,7 @@ def OpenConnection( ):
     CreateConnection()
     sock.connect(conf.server, conf.port)
 
-def ping():    
+def Ping():    
     OpenConnection()
     string = conf.token+" "+"ping"
     sock.send(string)
