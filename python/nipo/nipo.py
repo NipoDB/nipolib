@@ -71,7 +71,7 @@ def Sum(key):
     sock.send(string)
 
 def Count(key):
-    OpenConnect()
+    OpenConnection()
     string = conf.tokrn+" count "+key
     sock.send(string)
 
