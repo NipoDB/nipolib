@@ -45,10 +45,32 @@ def Status():
     string = conf.token+" "+"status"
     sock.send(string)
 
-def Set(key , value):
+def Set(key, value):
     OpenConnection()
     string = conf.token+" set "+key+" "+value
     sock.send(string)
+
+def Get(key, value):
+    OpenConnection()
+    string = conf.token+" Get "+key+" "+value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
