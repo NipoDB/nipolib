@@ -65,6 +65,10 @@ def Avg(key):
     string = conf.token+" avg "+key
     sock.send(string)
 
+def Sum(key):
+    OpenConnection()
+    string = conf.token+" sum "+key
+    sock.send(string)
 
 
 
