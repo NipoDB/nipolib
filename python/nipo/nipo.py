@@ -50,9 +50,9 @@ def Set(key, value):
     string = conf.token+" set "+key+" "+value
     sock.send(string)
 
-def Get(key, value):
+def Get(key):
     OpenConnection()
-    string = conf.token+" Get "+key+" "+value
+    string = conf.token+" Get "+key
     sock.send(string)
 
 def Select(key):
@@ -72,21 +72,7 @@ def Sum(key):
 
 def Count(key):
     OpenConnection()
-    string = conf.tokrn+" count "+key
+    string = conf.token+" count "+key
     sock.send(string)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
