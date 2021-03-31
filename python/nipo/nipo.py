@@ -12,7 +12,7 @@ class NipoSocket:
         self.sock.connect((host, port))
 
     def send(self, msg):
-        self.sock.sendall(bytes(msg , 'utf-8') )
+        self.sock.send(bytes(msg , 'utf-8') )
         response = self.sock.recv(1024)
         if response != None :
             print (repr(response))
@@ -29,7 +29,7 @@ def CreateConfig(token, server, port):
 
 def CreateConnection() :
     global sock
-    sock = nipoSocket()
+    sock = NipoSocket()
 
 def OpenConnection( ): 
     CreateConnection()
@@ -40,3 +40,15 @@ def Ping():
     string = conf.token+" "+"ping"
     sock.send(string)
 
+def Status():
+    OpenConnection()
+    string = conf.token+" "+"status"
+    sock.send(string)
+
+
+
+
+
+CreateConfig("lksd", "127.0.0.1", 65432)
+#Ping()
+#Status()
