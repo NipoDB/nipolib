@@ -45,10 +45,10 @@ def Status():
     string = conf.token+" "+"status"
     sock.send(string)
 
+def Set(key , value):
+    OpenConnection()
+    string = conf.token+" set "+key+" "+value
+    sock.send(string)
 
 
 
-
-CreateConfig("lksd", "127.0.0.1", 65432)
-#Ping()
-#Status()
