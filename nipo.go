@@ -1,4 +1,4 @@
-package nipo
+package nipolib
 
 import (
 	"net"
