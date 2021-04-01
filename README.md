@@ -5,13 +5,13 @@ GO library for nipo .
     package main
 
     import (
-    	"nipo"
+    	"github.com/NipoDB/nipolib"
     	"fmt"
     )
 
     func main() {
-        config := nipo.CreateConfig("TOKEN", "IP of SERVER", "PORT")
-        SetResult,Setok := nipo.Set(config, "KEY", "VALUE")
+        config := nipolib.CreateConfig("TOKEN", "IP of SERVER", "PORT")
+        SetResult,Setok := nipolib.Set(config, "KEY", "VALUE")
         if !Setok {
             fmt.Println("Error at set")    
         } else {
@@ -19,7 +19,7 @@ GO library for nipo .
             fmt.Println(SetResult)
         }
 
-        GetResult,Getok := nipo.get(config, "KEY")
+        GetResult,Getok := nipolib.get(config, "KEY")
         if !Getok {
             fmt.Println("Error at get")    
         } else {
