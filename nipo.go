@@ -37,9 +37,9 @@ func OpenConnection(config *Config) (Connection, bool) {
 }
 
 func (connection *Connection) Logout() bool {
-	err := connection.socket.Close()
-	if err != nil {
-		fmt.Println("nipolib Error logout from connection : " + err.Error())
+	ok := connection.socketClose()
+	if !ok {
+		fmt.Println("nipolib Error logout from connection ")
 		return false	
 	}
 	return true
