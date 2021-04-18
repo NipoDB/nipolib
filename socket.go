@@ -32,6 +32,10 @@ func (connection *Connection) socketWrite(cmd string) (string, bool) {
 
 func (connection *Connection) socketClose() (bool) {
 	socket := connection.socket
-	socket.Close()
+	err := socket.Close()
+	if err != nil {
+		fmt.Println("nipolib Error closing socket: "+err.Error())
+		return false
+	}
 	return true
 }
