@@ -27,6 +27,9 @@ func (connection *Connection) socketWrite(cmd string) (string, bool) {
 	if string(response) != "" {
 		return string(response),true
 	}
+	if string(response) == "" {
+		return string("null"),true
+	}
 	return string(response),ok
 }
 
