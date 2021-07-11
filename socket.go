@@ -25,7 +25,7 @@ func (connection *Connection) socketWrite(cmd string) (string, bool) {
 	response,_ := bufio.NewReader(connection.socket).ReadString('\n')
 	ok := false
 	if string(response) == "" {
-		return string("null"),true
+		return string("null\n"),true
 	}
 	if string(response) != "" {
 		return string(response),true
