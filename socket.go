@@ -24,11 +24,11 @@ func (connection *Connection) socketWrite(cmd string) (string, bool) {
 	connection.socket.Write([]byte(cmd+"\n"))
 	response,_ := bufio.NewReader(connection.socket).ReadString('\n')
 	ok := false
-	if string(response) != "" {
-		return string(response),true
-	}
 	if string(response) == "" {
 		return string("null"),true
+	}
+	if string(response) != "" {
+		return string(response),true
 	}
 	return string(response),ok
 }
